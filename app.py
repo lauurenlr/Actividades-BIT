@@ -8,7 +8,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 
 # Including Dataset from Drive
-df = pd.read_csv('CO2_emission_by_countries.csv')
+df = pd.read_csv('CO2_emission_by_countries_MODIFICADO.csv')
 df
 
 #Delete rows with missing data
