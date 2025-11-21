@@ -8,9 +8,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 
 # Including Dataset from Drive
-from google.colab import drive
-drive.mount('/content/drive')
-df = pd.read_csv('/content/drive/MyDrive/BIT/CO2_emission_by_countries.csv')
+df = pd.read_csv('CO2_emission_by_countries.csv')
 df
 
 #Delete rows with missing data
@@ -24,10 +22,8 @@ Years = df["Year"].unique()
 emision_min = df["CO2 emission (Tons)"].min()
 emision_max = df["CO2 emission (Tons)"].max()
 
-display(df) #Information of Dataframe
 
-display(df.describe()) #Showing the summary about the statistical datas
-display(df.columns)
+
 
 # Creating app Dash with topic QUARTZ
 external_stylesheets = [dbc.themes.QUARTZ]
