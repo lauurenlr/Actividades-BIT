@@ -15,7 +15,7 @@ df
 df = df.dropna(subset=["CO2 emission (Tons)","Year"])
 #Making sure the variable Year is whole number
 df ["Year"] = df ["Year"].astype(int)
-df ["CO2 emission (Tons)"] = df ["CO2 emission (Tons)"].astype(int)
+df ["CO2 emission (Tons)"] = df ["CO2 emission (Tons)"].astype(float)
 
 Countries = df["Country"].unique()
 Years = df["Year"].unique()
@@ -73,8 +73,8 @@ app.layout = dbc.Container([
                 min = emision_min, #Minimum allowed value
                 max = emision_max, #Maximum allowed value
                 value = [emision_min, emision_max], #Selected range
-                marks = {i: f'{i:,}' for i in range (emision_min, emision_max + 1, 1000)},
-                step = 1 # Increase by one unit
+                marks = {i: f'{i/1e9:.0f}B' for i in range (int(emision_min), int(emision_max) + 1, 50000000000)},
+                step =  100000000, # Increase by one unit
 
             )
          ])
