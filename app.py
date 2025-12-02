@@ -126,7 +126,7 @@ def update_graph(values_country, range_year, range_emision):
       y = "CO2 emission (Tons)",
       title= f"CO2 Emissions in {values_country}",
       style={'color': 'black'},
-      persistence_type='session'
+      persistence_type='session',
   )
 
   # ---------------------- GRAPH 2: CAKE GRAPH ----------------------
@@ -136,7 +136,7 @@ def update_graph(values_country, range_year, range_emision):
       values = "CO2 emission (Tons)",
       title= f"Percentage of CO2 Emissions per year in {values_country}",
       style={'color': 'black'},
-      persistence_type='session'
+      persistence_type='session',
   )
 
   # ---------------------- GRAPH 2: LINE GRAPH ----------------------
@@ -146,7 +146,7 @@ def update_graph(values_country, range_year, range_emision):
       y = "CO2 emission (Tons)",
       title= f"Evolution of CO2 Emissions in {values_country}",
       style={'color': 'black'},
-      persistence_type='session'
+      persistence_type='session',
   )
 
   for fig in [bars_graph, cake_graph, line_graph]:
