@@ -74,7 +74,7 @@ app.layout = dbc.Container([
                 min = emision_min, #Minimum allowed value
                 max = emision_max, #Maximum allowed value
                 value = [emision_min, emision_max], #Selected range
-                marks = {i: f'{i:,}' for i in range (emision_min, emision_max + 1, 1000)}
+                marks = {i: f'{i:,}' for i in range (emision_min, emision_max + 1, 1000)},
                 step = 1 # Increase by one unit
 
             )
