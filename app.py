@@ -28,16 +28,16 @@ emision_max = df["CO2 emission (Tons)"].max()
 # Creating app Dash with topic QUARTZ
 external_stylesheets = [dbc.themes.QUARTZ]
 app = Dash(__name__, external_stylesheets=external_stylesheets)
-app.title = "Emisiones globales de CO₂"
+app.title = "Global CO₂ Emissions"
 
 #Define the application layout
 app.layout = dbc.Container([
     #Create a more beautiful and organized structure
-    dbc.Row([html.H1("Global CO2 emissions")]),
+    dbc.Row([html.H1("Global CO₂ Emissions")]),
     #Create a row with the title Global CO2 Emissions
     dbc.Row([
         dbc.Col([
-            html.Label("Select a Country:"),
+            html.Label("Select a Country:", style={'color': 'black'}),
             #Text, filter
             dcc.Dropdown(
                 id ='selector_country',
@@ -49,7 +49,7 @@ app.layout = dbc.Container([
         )]),
 
         dbc.Col([ #Creating colmn
-            html.Label("Select the year range"), #Text
+            html.Label("Select the year range", style={'color': 'black'}), #Text
             dcc.RangeSlider(
             #Select a range the number like a year
                 id = 'selector_year',
@@ -65,7 +65,7 @@ app.layout = dbc.Container([
         )]),
 
         dbc.Col([ #Creating colmn
-            html.Label("Select emissions range (CO2):"), #Descriptive text
+            html.Label("Select emissions range (CO2):", style={'color': 'black'}), #Descriptive text
             dcc.RangeSlider(
                 #Create a double slider, that is, one with two buttons that
                 #allow you to select a range of values.
@@ -74,7 +74,7 @@ app.layout = dbc.Container([
                 min = emision_min, #Minimum allowed value
                 max = emision_max, #Maximum allowed value
                 value = [emision_min, emision_max], #Selected range
-                marks =None, #Don't display any labels
+                marks = {i: f'{i:,}' for i in range (emision_min, emision_max + 1, 1000)}
                 step = 1 # Increase by one unit
 
             )
