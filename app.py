@@ -15,13 +15,12 @@ df
 df = df.dropna(subset=["CO2 emission (Tons)","Year"])
 #Making sure the variable Year is whole number
 df ["Year"] = df ["Year"].astype(int)
-df ["CO2 emission (Tons)"] = df ["CO2 emission (Tons)"].astype(float)
+df ["CO2 emission (Tons)"] = df ["CO2 emission (Tons)"].astype(int)
 
 Countries = df["Country"].unique()
 Years = df["Year"].unique()
 emision_min = df["CO2 emission (Tons)"].min()
 emision_max = df["CO2 emission (Tons)"].max()
-
 
 
 
