@@ -61,7 +61,7 @@ app.layout = dbc.Container([
                 #Select the range between 1990 and 2020
                 marks = {a: str(a) for a in range (1990, 2021)},
                 #Create the labels by year
-                step = 1
+                step = 5
                 #Advance year by year
         )]),
 
