@@ -142,6 +142,8 @@ def update_graph(values_country, range_year, range_emision):
       line=dict( 
           color = 'black',
           width = 4
+          )
+  )
           
   for fig in [bars_graph, cake_graph, line_graph]:
       fig.update_layout(
