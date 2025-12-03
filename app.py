@@ -125,6 +125,7 @@ def update_graph(values_country, range_year, range_emision):
       x = "Year",
       y = "CO2 emission (Tons)",
       title= f"CO2 Emissions in {values_country}"
+      height=600
   )
 
   # ---------------------- GRAPH 2: CAKE GRAPH ----------------------
@@ -133,6 +134,7 @@ def update_graph(values_country, range_year, range_emision):
       names = "Year",
       values = "CO2 emission (Tons)",
       title= f"Percentage of CO2 Emissions per year in {values_country}"
+      height=600
   )
 
   # ---------------------- GRAPH 2: LINE GRAPH ----------------------
@@ -141,6 +143,7 @@ def update_graph(values_country, range_year, range_emision):
       x = "Year",
       y = "CO2 emission (Tons)",
       title= f"Evolution of CO2 Emissions in {values_country}" 
+      height=600
   )
   line_graph.update_traces(
       line=dict( 
