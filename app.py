@@ -35,7 +35,7 @@ app.layout = dbc.Container([
     dbc.Row([html.H1("Global CO₂ Emissions")]),
     #Create a row with the title Global CO2 Emissions
     dbc.Row([
-        dbc.Col([
+        dbc.Row([
             html.Label("Select a Country:", style={'color': 'black'}),
             #Text, filter
             dcc.Dropdown(
@@ -47,7 +47,7 @@ app.layout = dbc.Container([
                 #Generate an options list for to menú with info about the names countries
                 value = df['Country'].unique()[0]
                 #Unify the name of each country
-            ) # <-- Cierre limpio del dcc.Dropdown
+            ) 
         ], width = 2), 
                 
     
