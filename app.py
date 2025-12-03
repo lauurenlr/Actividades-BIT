@@ -124,7 +124,7 @@ def update_graph(values_country, range_year, range_emision):
       df_filtered,
       x = "Year",
       y = "CO2 emission (Tons)",
-      title= f"CO2 Emissions in {values_country}"
+      title= f"CO2 Emissions in {values_country}",
       height=600
   )
 
@@ -133,7 +133,7 @@ def update_graph(values_country, range_year, range_emision):
       df_filtered,
       names = "Year",
       values = "CO2 emission (Tons)",
-      title= f"Percentage of CO2 Emissions per year in {values_country}"
+      title= f"Percentage of CO2 Emissions per year in {values_country}",
       height=600
   )
 
@@ -142,7 +142,7 @@ def update_graph(values_country, range_year, range_emision):
       df_filtered,
       x = "Year",
       y = "CO2 emission (Tons)",
-      title= f"Evolution of CO2 Emissions in {values_country}" 
+      title= f"Evolution of CO2 Emissions in {values_country}" ,
       height=600
   )
   line_graph.update_traces(
