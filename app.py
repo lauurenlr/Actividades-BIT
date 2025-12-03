@@ -57,8 +57,6 @@ app.layout = dbc.Container([
                 #Component identifier.
                 min = 1990, #Minimum value, far left
                 max = 2020, #Maximum value, far right
-                style={'color': 'black'},
-                persistence_type='session',
                 value = [1990, 2020],
                 #Select the range between 1990 and 2020
                 marks = {a: str(a) for a in range (1990, 2021)},
@@ -76,8 +74,6 @@ app.layout = dbc.Container([
                 #Component identifier
                 min = emision_min, #Minimum allowed value
                 max = emision_max, #Maximum allowed value
-                style={'color': 'black'},
-                persistence_type='session',
                 value = [emision_min, emision_max], #Selected range
                 marks = {i: f'{i/1e9:.0f}B' for i in range (int(emision_min), int(emision_max) + 1, 50000000000)},
                 step =  100000000, # Increase by one unit
