@@ -35,22 +35,22 @@ app.layout = dbc.Container([
     dbc.Row([html.H1("Global CO₂ Emissions")]),
     #Create a row with the title Global CO2 Emissions
     dbc.Row([
-        dbc.Row([
-            html.Label("Select a Country:", style={'color': 'black'}),
-            #Text, filter
-            dcc.Dropdown(
-                id ='selector_country',
-                #interactive selector, to show a list the options
-                options = [{'label': Country, 'value': Country} for Country in Countries],
-                style={'color': 'black'},
-                persistence_type='session',
-                #Generate an options list for to menú with info about the names countries
-                value = df['Country'].unique()[0]
+        dbc.Col([
+            html.Label("Select a Country:", style={'color': 'black'}),
+            #Text, filter
+            dcc.Dropdown(
+                id ='selector_country',
+                #interactive selector, to show a list the options
+                options = [{'label': Country, 'value': Country} for Country in Countries],
+                style={'color': 'black'},
+                persistence_type='session',
+                #Generate an options list for to menú with info about the names countries
+                value = df['Country'].unique()[0]
                 #Unify the name of each country
-            ) 
-        ], width = 2), 
-                
-    
+            )
+        ], width = 2),
+
+
 
         dbc.Col([ #Creating colmn
             html.Label("Select the year range", style={'color': 'black'}), #Text
@@ -67,7 +67,7 @@ app.layout = dbc.Container([
                 step = 5
                 #Advance year by year
             )], width = 5),
-        
+
 
         dbc.Col([ #Creating colmn
             html.Label("Select emissions range (CO2):", style={'color': 'black'}), #Descriptive text
@@ -81,22 +81,22 @@ app.layout = dbc.Container([
                 value = [emision_min, emision_max], #Selected range
                 marks = {i: f'{i/1e9:.0f}B' for i in range (int(emision_min), int(emision_max) + 1, 50000000000)},
                 step =  100000000, # Increase by one unit
-            )], width = 5),
+            )], width = 5)
 
-            
+
     ]),
-])
+
+    dbc.Row([ 
+        dbc.Col ([
+            dcc.Graph(id = 'Graph_Bars_Emision_CO2')
+        ]),
         dbc.Col([
-            dbc.Col ([
-                dcc.Graph(id = 'Graph_Bars_Emision_CO2')
-            ]),
-            dbc.Col([
-                dcc.Graph(id = 'Graph_Cake_emision_CO2')
-            ]),
-            dbc.Col([
-                dcc.Graph(id = 'Graph_Line_emision_CO2')
-            ])
+            dcc.Graph(id = 'Graph_Cake_emision_CO2')
+        ]),
+        dbc.Col([
+            dcc.Graph(id = 'Graph_Line_emision_CO2')
         ])
+    ])
 
 ])
 
