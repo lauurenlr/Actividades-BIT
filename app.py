@@ -138,7 +138,11 @@ def update_graph(values_country, range_year, range_emision):
       y = "CO2 emission (Tons)",
       title= f"Evolution of CO2 Emissions in {values_country}" 
   )
-
+  line_graph.update_traces(
+      line=dict( 
+          color = 'black',
+          width = 4
+          
   for fig in [bars_graph, cake_graph, line_graph]:
       fig.update_layout(
           plot_bgcolor='rgba(0, 0, 0, 0)',
